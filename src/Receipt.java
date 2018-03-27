@@ -3,7 +3,7 @@ import java.util.*;
 public class Receipt {
 
     private List<Product> productList;
-    float sumPrice;
+    private float sumPrice;
 
     public Receipt() {
         this.productList = new ArrayList<>();
@@ -12,9 +12,14 @@ public class Receipt {
 
     public void addProduct(Product product) {
         productList.add(product);
+        sumPrice += product.getPrice();
     }
 
     public List<Product> getProductList() {
         return productList;
+    }
+
+    public float getSumPrice() {
+        return sumPrice;
     }
 }
